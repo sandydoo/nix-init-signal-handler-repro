@@ -24,7 +24,14 @@
         in
         pkgs.mkShell {
           inputsFrom = [packages.${system}.default];
-          nativeBuildInputs = [pkgs.pkgs-config];
+
+          buildInputs = [
+            pkgs.cabal-install
+            pkgs.haskell.compiler.ghc902
+            pkgs.nix
+            pkgs.boost
+            pkgs.pkg-config
+          ];
         }
       );
     };
