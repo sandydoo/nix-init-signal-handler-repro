@@ -69,8 +69,12 @@ executable nix-init-signal-handler-repro
     -- Other library packages from which modules are imported.
     build-depends:    base ^>=4.15.1.0
                     , hercules-ci-cnix-store
+                    , protolude
                     , text
                     , unix
+
+
+    default-extensions: NoImplicitPrelude
 
     pkgconfig-depends: nix-main, nix-store
 
